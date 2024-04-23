@@ -70,14 +70,18 @@ if (check) {
   console.log(`Số ${n} không phải là số nguyên tố.`);
 }
 console.log(" ");
-// // Bài 5
-// console.log("Bài 5:");
-// var N = 5;
-// for (var i = 1; i <= N; i++) {
-//   for (var j = 1; j <= i; j++) {
-//     console.log(j);
-//   }
-// }
+
+// Bài 5
+document.write(`<h2>Bài 5 (Chưa hoàn thành)</h2>`);
+var N = 5;
+document.write(`<div>N = ${N}</div>`);
+for (var i = 1; i <= N; i++) {
+  for (var j = 1; j <= i; j++) {
+    document.write(`${j}`);
+  }
+  document.write(`<div></div>`);
+}
+
 document.write(`<h2>Bài 6</h2>`);
 for (var row = 1; row < 9; row++) {
   for (var col = 1; col < 9; col++) {
@@ -104,4 +108,14 @@ for (var row = 1; row < 9; row++) {
     }
   }
   document.write(`<div></div>`);
+}
+
+document.write(`<h2>Bài 7</h2>`);
+for (var i = 1; i < 11; i++) {
+  document.write(`<div>Bảng ${i}:</div>`);
+  for (var j = 1; j < 11; j++) {
+    document.write(`${i} x ${j} = ${i * j}`);
+    document.write(`<div></div>`);
+  }
+  document.write(`<br></br>`);
 }
