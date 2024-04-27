@@ -73,13 +73,14 @@ console.log(" ");
 
 // Bài 5
 document.write(`<h2>Bài 5 (Chưa hoàn thành)</h2>`);
-var N = 5;
-document.write(`<div>N = ${N}</div>`);
-for (var i = 1; i <= N; i++) {
-  for (var j = 1; j <= i; j++) {
-    document.write(`${j}`);
+var N = 5,
+  tmp;
+for (let i = 1; i <= N; i++) {
+  let row = "";
+  for (let j = 1; j <= i; j++) {
+    row += j + " ";
   }
-  document.write(`<div></div>`);
+  document.write(`${row}`);
 }
 
 document.write(`<h2>Bài 6</h2>`);
