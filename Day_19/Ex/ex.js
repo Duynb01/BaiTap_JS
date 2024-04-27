@@ -1,24 +1,32 @@
 // Bài 1;
 console.log("Bài 1:");
-function Fibonacci(n) {
-  if (n > 0 && n % 1 === 0) {
-    if (n === 1 || n === 2) {
+function Fibonacci(k) {
+  if (k > 0 && k % 1 === 0) {
+    if (k === 1 || k === 2) {
       return 1;
+    } else {
+      return Fibonacci(k - 1) + Fibonacci(k - 2);
     }
-    return Fibonacci(n - 1) + Fibonacci(n - 2);
   } else {
     console.log(`Nhập sai!`);
   }
 }
-var x,
-  n = 6,
-  array = [];
-console.log(`N = ${n}`);
-console.log(`Dãy Fibonacci gồm ${n} số:`);
-for (var i = 1; i <= n; i++) {
-  array.push(Fibonacci(i));
+function print(n) {
+  if (h > n) {
+    return;
+  } else {
+    a.push(Fibonacci(h));
+    h++;
+    print(n);
+  }
 }
-console.log(array);
+var x,
+  h = 1,
+  n = 6,
+  a = [];
+console.log(`N = ${n}`);
+print(n);
+console.log(`Dãy Fibonacci gồm ${n} số đầu: ` + a);
 console.log(` `);
 
 // Bài 2
@@ -173,25 +181,25 @@ function convertString(n) {
             console.log(`${number(n4)} Nghìn ${number(n3)} Trăm`);
           } else {
             console.log(
-              `${number(n4)} Nghìn  ${number(n3)} Trăm Linh ${number(n1)}`
+              `${number(n4)} Nghìn ${number(n3)} Trăm Linh ${number(n1)}`
             );
           }
         } else if (string[2] == 1) {
           if (string[3] == 0) {
-            console.log(`${number(n4)} Nghìn  ${number(n3)} Trăm Mười`);
+            console.log(`${number(n4)} Nghìn ${number(n3)} Trăm Mười`);
           } else {
             console.log(
-              `${number(n4)} Nghìn  ${number(n3)} Trăm Mười ${number(n1)}`
+              `${number(n4)} Nghìn ${number(n3)} Trăm Mười ${number(n1)}`
             );
           }
         } else {
           if (string[3] == 0) {
             console.log(
-              `${number(n4)} Nghìn  ${number(n3)} Trăm ${number(n2)} Mươi`
+              `${number(n4)} Nghìn ${number(n3)} Trăm ${number(n2)} Mươi`
             );
           } else {
             console.log(
-              `${number(n4)} Nghìn  ${number(n3)} Trăm ${number(
+              `${number(n4)} Nghìn ${number(n3)} Trăm ${number(
                 n2
               )} Mươi ${number(n1)}`
             );
