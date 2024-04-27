@@ -46,11 +46,10 @@ console.log(` `);
 console.log(`Bài 3:`);
 var tmp,
   out,
-  n = 219;
+  n = 9215;
 var string = "";
 string += n;
-console.log(string);
-console.log(string[1]);
+//
 function number(tmp) {
   switch (tmp) {
     case 0:
@@ -87,14 +86,15 @@ function number(tmp) {
   return out;
 }
 //
-
-//
 function convertString(n) {
   var n1, n2, n3, n4;
   if (n > 0 && n < 10000 && n % 1 === 0) {
+    // Một chữ số
     if (string.length === 1) {
       console.log(number(n));
-    } else if (string.length === 2) {
+    }
+    // Hai Chữ Số
+    else if (string.length === 2) {
       n1 = n % 10;
       n2 = Math.floor(n / 10);
       if (string[0] == 1) {
@@ -110,22 +110,98 @@ function convertString(n) {
           console.log(`${number(n2)} Mươi ${number(n1)}`);
         }
       }
-    } else if (string.length === 3) {
+    }
+    // Ba Chữ Số
+    else if (string.length === 3) {
       n1 = n % 10;
       n2 = Math.floor(n / 10);
       n2 = n2 % 10;
       n3 = Math.floor(n / 100);
-    } else if (string.length === 4) {
+      if (string[1] == 0) {
+        if (string[2] == 0) {
+          console.log(`${number(n3)} Trăm`);
+        } else {
+          console.log(`${number(n3)} Trăm Linh ${number(n1)}`);
+        }
+      } else if (string[1] == 1) {
+        if (string[2] == 0) {
+          console.log(`${number(n3)} Trăm Mười`);
+        } else {
+          console.log(`${number(n3)} Trăm Mười ${number(n1)}`);
+        }
+      } else {
+        if (string[2] == 0) {
+          console.log(`${number(n3)} Trăm ${number(n2)} Mươi`);
+        } else {
+          console.log(`${number(n3)} Trăm ${number(n2)} Mươi ${number(n1)}`);
+        }
+      }
+    }
+    // Bốn Chữ Số
+    else if (string.length === 4) {
       n1 = n % 10;
       n2 = Math.floor(n / 10);
       n2 = n2 % 10;
       n3 = Math.floor(n / 100);
       n3 = n3 % 10;
       n4 = Math.floor(n / 1000);
+      if (string[1] == 0) {
+        if (string[2] == 0) {
+          if (string[3] == 0) {
+            console.log(`${number(n4)} Nghìn`);
+          } else {
+            console.log(`${number(n4)} Nghìn Không Trăm Linh ${number(n1)}`);
+          }
+        } else if (string[2] == 1) {
+          if (string[3] == 0) {
+            console.log(`${number(n4)} Nghìn Không Trăm Mười`);
+          } else {
+            console.log(`${number(n4)} Nghìn Không Trăm Mười ${number(n1)}`);
+          }
+        } else {
+          if (string[3] == 0) {
+            console.log(`${number(n4)} Nghìn Không Trăm ${number(n2)} Mươi`);
+          } else {
+            console.log(
+              `${number(n4)} Nghìn Không Trăm ${number(n2)} Mươi ${number(n1)}`
+            );
+          }
+        }
+      } else {
+        if (string[2] == 0) {
+          if (string[3] == 0) {
+            console.log(`${number(n4)} Nghìn ${number(n3)} Trăm`);
+          } else {
+            console.log(
+              `${number(n4)} Nghìn  ${number(n3)} Trăm Linh ${number(n1)}`
+            );
+          }
+        } else if (string[2] == 1) {
+          if (string[3] == 0) {
+            console.log(`${number(n4)} Nghìn  ${number(n3)} Trăm Mười`);
+          } else {
+            console.log(
+              `${number(n4)} Nghìn  ${number(n3)} Trăm Mười ${number(n1)}`
+            );
+          }
+        } else {
+          if (string[3] == 0) {
+            console.log(
+              `${number(n4)} Nghìn  ${number(n3)} Trăm ${number(n2)} Mươi`
+            );
+          } else {
+            console.log(
+              `${number(n4)} Nghìn  ${number(n3)} Trăm ${number(
+                n2
+              )} Mươi ${number(n1)}`
+            );
+          }
+        }
+      }
     }
   } else {
     console.log(`Nhập sai!`);
   }
 }
-
-// convertString(n);
+console.log(`Số N = ${n}`);
+convertString(n);
