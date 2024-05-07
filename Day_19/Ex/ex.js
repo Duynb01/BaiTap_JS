@@ -54,7 +54,7 @@ console.log(` `);
 console.log(`Bài 3:`);
 var tmp,
   out,
-  n = 9215;
+  n = 1424;
 var string = "";
 string += n;
 //
@@ -96,7 +96,7 @@ function number(tmp) {
 //
 function convertString(n) {
   var n1, n2, n3, n4;
-  if (n > 0 && n < 10000 && n % 1 === 0) {
+  if (n > 0 && n < 10000 && n % 1 === 0 && n !== " ") {
     // Một chữ số
     if (string.length === 1) {
       console.log(number(n));
