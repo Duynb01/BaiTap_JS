@@ -5,17 +5,19 @@ var keyword = " ";
 var position = content.indexOf(keyword);
 var count = 0;
 setInterval(() => {
-  var work = "";
-
+  var word = "";
   while (count < content.length && content.charAt(count) !== " ") {
-    work += content.charAt(count);
+    word += content.charAt(count);
     count++;
   }
   if (content.charAt(count) === " ") {
     count++;
   }
-  var workUpdate = content.replace(work, `<span>${work}</span>`);
-  var contentUpdate = workUpdate;
+  if (count === content.length) {
+    count = 0;
+  }
+  var wordUpdate = content.replace(word, `<span>${word}</span>`);
+  var contentUpdate = wordUpdate;
+
   document.body.innerHTML = contentUpdate;
-  contentUpdate = content;
 }, 1000);
