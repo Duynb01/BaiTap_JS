@@ -14,10 +14,8 @@ setInterval(() => {
   if (content.charAt(count) === " ") {
     count++;
   }
-  //   var cut = content.replace(work, `<span>${work}</span>`);
-  //   var workUpdate = content.slice(count, cut.length - 1);
   var workUpdate = content.replace(work, `<span>${work}</span>`);
-  var contentUpdate = workUpdate + content.slice(count + keyword.length);
+  var contentUpdate = workUpdate;
   document.body.innerHTML = contentUpdate;
   contentUpdate = content;
 }, 1000);
