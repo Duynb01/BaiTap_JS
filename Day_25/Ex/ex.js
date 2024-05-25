@@ -159,23 +159,23 @@ Array.prototype.reduce2 = function (callback, initialValue) {
   } else {
     prev = initialValue;
   }
-  for (var i = 0; i < this.length; i++) {
-    var index = i;
-    array = this;
-
-    if (initialValue === undefined) {
+  if (initialValue === undefined) {
+    for (var i = 0; i < this.length - 1; i++) {
+      var index = i;
       current = this[i + 1];
-    } else {
-      current = this[i];
+      prev = callback(prev, current, index, (array = this));
     }
-
-    prev = callback(prev, current, index, array);
+  } else {
+    for (var i = 0; i < this.length; i++) {
+      var index = i;
+      current = this[i];
+      prev = callback(prev, current, index, (array = this));
+    }
   }
   return (prev = current), prev;
 };
-
 var result = ar.reduce2(function (prev, cur) {
   console.log(prev);
   return cur;
-});
+}, 0);
 console.log(result);
