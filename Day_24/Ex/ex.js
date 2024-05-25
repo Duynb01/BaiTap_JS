@@ -18,6 +18,15 @@ function createCustomers(customers) {
   });
   return customers;
 }
+
+function customer(name, age, address) {
+  return {
+    name,
+    age,
+    address,
+  };
+}
+
 const result = createCustomers(arrTMP);
 console.log("Sau khi xử lý:");
 console.log(result);
