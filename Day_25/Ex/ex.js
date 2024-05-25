@@ -150,34 +150,32 @@ console.log(` `);
 var ar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(`Bài 4`);
 Array.prototype.reduce2 = function (callback, initialValue) {
+  var prev, current, array;
   if (typeof callback !== "function") {
     return;
   }
-  var prev, current, array;
+  if (initialValue === undefined) {
+    prev = this[0];
+  } else {
+    prev = initialValue;
+  }
   for (var i = 0; i < this.length; i++) {
     var index = i;
-    if (i === 0) {
-      if (initialValue === null || initialValue === undefined) {
-        prev = this[i];
-        current = this[i + 1];
-        array = this;
-      } else {
-        prev = initialValue;
-        current = this[i];
-        array = this;
-      }
-    } else {
-      prev = current;
+    array = this;
+
+    if (initialValue === undefined) {
       current = this[i + 1];
-      array = this;
+    } else {
+      current = this[i];
     }
+
+    prev = callback(prev, current, index, array);
   }
-  return callback(prev, current, index, array);
+  return (prev = current), prev;
 };
 
-console.log(
-  ar.reduce2(function (prev, cur) {
-    console.log(prev);
-    return cur;
-  }, 0)
-);
+var result = ar.reduce2(function (prev, cur) {
+  console.log(prev);
+  return cur;
+});
+console.log(result);
