@@ -148,4 +148,4 @@ console.log(newArr);
 console.log(` `);
 
 console.log(`Bài 4`);
-Array.prototype.reduce2 = function (prev, current, index) {};
+Array.prototype.reduce2 = function (callback, initialValue) {};
