@@ -147,5 +147,37 @@ console.log(`Mảng sau khi sử lý:`);
 console.log(newArr);
 console.log(` `);
 
+var ar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(`Bài 4`);
-Array.prototype.reduce2 = function (callback, initialValue) {};
+Array.prototype.reduce2 = function (callback, initialValue) {
+  if (typeof callback !== "function") {
+    return;
+  }
+  var prev, current, array;
+  for (var i = 0; i < this.length; i++) {
+    var index = i;
+    if (i === 0) {
+      if (initialValue === null || initialValue === undefined) {
+        prev = this[i];
+        current = this[i + 1];
+        array = this;
+      } else {
+        prev = initialValue;
+        current = this[i];
+        array = this;
+      }
+    } else {
+      prev = current;
+      current = this[i + 1];
+      array = this;
+    }
+  }
+  return callback(prev, current, index, array);
+};
+
+console.log(
+  ar.reduce2(function (prev, cur) {
+    console.log(prev);
+    return cur;
+  }, 0)
+);
