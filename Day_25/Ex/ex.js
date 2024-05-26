@@ -93,41 +93,36 @@ var categories = [
   },
 ];
 
+// // C1
 var newArr = [];
-// Xử lý thêm children vào các Object có giá trị con
+// Xử lý thêm children vào các Object
 categories.forEach(function (object1) {
-  categories.forEach(function (object2) {
-    if (object1["id"] === object2["parent"]) {
-      object1["children"] = [];
-    }
-  });
-  if (object1["parent"] === 0) {
-    object1["children"] = [];
-    newArr.push(object1);
-  }
+  object1["children"] = [];
 });
 
-// Xử lý thêm childrent cấp 1
-newArr.forEach(function (object) {
-  categories.forEach(function (value) {
-    if (object["id"] === value["parent"]) {
-      object["children"].push(value);
-    }
-  });
-});
-// Xử lý thêm childrent cấp 2
-newArr.forEach(function (object) {
-  if (object["children"].length !== 0) {
-    object["children"].forEach(function (child) {
-      categories.forEach(function (value) {
-        if (child["id"] === value["parent"]) {
-          child["children"].push(value);
-        }
-      });
+// Xử lý thêm children vào parent
+function addChild(array) {
+  array.forEach(function (object1) {
+    array.forEach(function (object2) {
+      if (object1["id"] === object2["parent"]) {
+        object1["children"].push(object2);
+      }
     });
-  }
-});
+  });
+  return array;
+}
+var arr1 = addChild(categories);
 
+// Xử lý lấy ra Object parent
+function getParent(array) {
+  array.forEach(function (object) {
+    if (object["parent"] === 0) {
+      newArr.push(object);
+    }
+  });
+  return newArr;
+}
+var arr2 = getParent(arr1);
 // Xử lý xóa bỏ children rỗng và parent
 function deleteParent(array) {
   array.forEach(function (object) {
@@ -141,13 +136,65 @@ function deleteParent(array) {
   });
   return array;
 }
-
-newArr = deleteParent(newArr);
+newArr = deleteParent(arr2);
 console.log(`Mảng sau khi sử lý:`);
 console.log(newArr);
 console.log(` `);
 
-var ar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// C2
+// // Xử lý thêm children vào các Object có giá trị con
+// categories.forEach(function (object1) {
+//     categories.forEach(function (object2) {
+//       if (object1["id"] === object2["parent"]) {
+//         object1["children"] = [];
+//       }
+//     });
+//     if (object1["parent"] === 0) {
+//       object1["children"] = [];
+//       newArr.push(object1);
+//     }
+//   });
+
+//   // Xử lý thêm childrent cấp 1
+//   newArr.forEach(function (object) {
+//     categories.forEach(function (value) {
+//       if (object["id"] === value["parent"]) {
+//         object["children"].push(value);
+//       }
+//     });
+//   });
+//   // Xử lý thêm childrent cấp 2
+//   newArr.forEach(function (object) {
+//     if (object["children"].length !== 0) {
+//       object["children"].forEach(function (child) {
+//         categories.forEach(function (value) {
+//           if (child["id"] === value["parent"]) {
+//             child["children"].push(value);
+//           }
+//         });
+//       });
+//     }
+//   });
+
+//   // Xử lý xóa bỏ children rỗng và parent
+//   function deleteParent(array) {
+//     array.forEach(function (object) {
+//       delete object["parent"];
+//       if (Array.isArray(object["children"]) && object["children"].length === 0) {
+//         delete object["children"];
+//       }
+//       if (Array.isArray(object["children"])) {
+//         deleteParent(object["children"]);
+//       }
+//     });
+//     return array;
+//   }
+
+//   newArr = deleteParent(newArr);
+//   console.log(`Mảng sau khi sử lý:`);
+//   console.log(newArr);
+//   console.log(` `);
+
 console.log(`Bài 4`);
 Array.prototype.reduce2 = function (callback, initialValue) {
   var prev, current, array;
@@ -174,6 +221,7 @@ Array.prototype.reduce2 = function (callback, initialValue) {
   }
   return (prev = current), prev;
 };
+var ar = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var result = ar.reduce2(function (prev, cur) {
   console.log(prev);
   return cur;
