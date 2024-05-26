@@ -94,13 +94,15 @@ var categories = [
 ];
 
 // // C1
-var newArr = [];
 // Xử lý thêm children vào các Object
-categories.forEach(function (object1) {
-  object1["children"] = [];
-});
+function addItem(array) {
+  array.forEach(function (object1) {
+    object1["children"] = [];
+  });
+  return array;
+}
 
-// Xử lý thêm children vào parent
+// Xử lý thêm các Object children vào Object parent
 function addChild(array) {
   array.forEach(function (object1) {
     array.forEach(function (object2) {
@@ -111,10 +113,10 @@ function addChild(array) {
   });
   return array;
 }
-var arr1 = addChild(categories);
 
 // Xử lý lấy ra Object parent
 function getParent(array) {
+  var newArr = [];
   array.forEach(function (object) {
     if (object["parent"] === 0) {
       newArr.push(object);
@@ -122,23 +124,28 @@ function getParent(array) {
   });
   return newArr;
 }
-var arr2 = getParent(arr1);
+
 // Xử lý xóa bỏ children rỗng và parent
-function deleteParent(array) {
+function deleteItem(array) {
   array.forEach(function (object) {
     delete object["parent"];
     if (Array.isArray(object["children"]) && object["children"].length === 0) {
       delete object["children"];
     }
     if (Array.isArray(object["children"])) {
-      deleteParent(object["children"]);
+      deleteItem(object["children"]);
     }
   });
   return array;
 }
-newArr = deleteParent(arr2);
+
+// Chạy
+function processArr(array) {
+  return deleteItem(getParent(addChild(addItem(array))));
+}
+
 console.log(`Mảng sau khi sử lý:`);
-console.log(newArr);
+console.log(processArr(categories));
 console.log(` `);
 
 // C2
