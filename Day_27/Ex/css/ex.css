@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body img {
+  width: 150px;
+}
+
+.container .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .navbar .login_search {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+.container .navbar .login_search > div {
+  display: flex;
+  column-gap: 8px;
+  cursor: pointer;
+}
+.container .navbar .login_search > div button {
+  background-color: transparent;
+  color: gray;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+}
+.container .navbar .login_search > i {
+  cursor: pointer;
+}
+
+.modal {
+  left: 0;
+  right: 0;
+  top: 5%;
+  position: fixed;
+}
+.modal.show {
+  display: block;
+}
+.modal .modal_dialog {
+  width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  position: relative;
+  z-index: 1;
+  border-radius: 4px;
+}
+.modal .modal_dialog .modal_header {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.modal .modal_dialog .modal_header .close {
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  font-size: 50px;
+  cursor: pointer;
+}
+.modal .modal_dialog .btn_form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.modal .modal_dialog .btn_form button {
+  padding: 20px 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  color: rgb(128, 128, 128);
+}
+.modal .modal_dialog .btn_form button.click {
+  background-color: rgb(26, 121, 0);
+  color: white;
+}
+.modal .modal_dialog .login {
+  padding: 20px;
+  font-family: Roboto;
+}
+.modal .modal_dialog .login.hidden {
+  display: none;
+}
+.modal .modal_dialog .login span {
+  display: block;
+  font-size: 16px;
+}
+.modal .modal_dialog .login input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 4px;
+  margin-block: 5px 20px;
+}
+.modal .modal_dialog .login i {
+  position: absolute;
+  top: 290px;
+  right: 30px;
+  color: #a8a2a2;
+}
+.modal .modal_dialog .login button {
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #fff;
+  background-color: rgb(26, 121, 0);
+}
+.modal .modal_dialog .register {
+  display: none;
+  padding: 20px;
+  font-family: Roboto;
+}
+.modal .modal_dialog .register.show {
+  display: block;
+}
+.modal .modal_dialog .register span {
+  display: block;
+  font-size: 16px;
+}
+.modal .modal_dialog .register input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 4px;
+  margin-block: 5px 20px;
+}
+.modal .modal_dialog .register i {
+  position: absolute;
+  top: 375px;
+  right: 30px;
+  color: #a8a2a2;
+}
+.modal .modal_dialog .register button {
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #fff;
+  background-color: rgb(26, 121, 0);
+}
+.modal .modal_overlay {
+  background: rgba(0, 0, 0, 0.504);
+  position: fixed;
+  inset: 0;
+  cursor: default;
+}
+
+/*# sourceMappingURL=ex.css.map */

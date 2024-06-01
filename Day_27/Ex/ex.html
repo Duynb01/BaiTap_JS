@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/ex.css" />
+    <title>Demo</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#">
+          <img
+            src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.742f36bc45f3443d0e59.svg"
+            alt="logo"
+          />
+        </a>
+        <div class="login_search">
+          <div>
+            <i class="fa-regular fa-user"></i>
+            <button class="btn">Đăng nhập</button>
+          </div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </nav>
+    </div>
+    <div class="modal">
+      <div class="modal_dialog">
+        <div class="modal_header">
+          <a href="#">
+            <img
+              src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.742f36bc45f3443d0e59.svg"
+              alt="logo"
+            />
+          </a>
+          <span class="close">&times;</span>
+        </div>
+        <div class="btn_form">
+          <button class="btn_login click">Đăng nhập</button>
+          <button class="btn_register">Đăng ký</button>
+        </div>
+
+        <form class="login">
+          <span>Email</span>
+          <input type="email" name="Email" placeholder="Email" class="email" />
+          <!-- <span class="error">Vui lòng nhập thông tin</span> -->
+          <span>Mật khẩu</span>
+          <input
+            type="password"
+            name="Password"
+            placeholder="Mật khẩu"
+            class="password"
+          />
+          <!-- <span class="error">Vui lòng nhập thông tin</span> -->
+          <i class="fa-regular fa-eye open"></i>
+          <button type="submit">Đăng Nhập</button>
+        </form>
+
+        <form class="register">
+          <span>Họ và tên</span>
+          <input type="text" name="Fullname" placeholder="Họ và tên" />
+          <span>Email</span>
+          <input type="email" name="Email" placeholder="Email" class="email" />
+          <span>Mật khẩu</span>
+          <input
+            type="password"
+            name="Password"
+            placeholder="Mật khẩu"
+            class="password"
+          />
+          <i class="fa-regular fa-eye open"></i>
+          <button type="submit">Đăng ký</button>
+        </form>
+      </div>
+      <div class="modal_overlay"></div>
+    </div>
+    <script src="ex.js"></script>
+  </body>
+</html>
