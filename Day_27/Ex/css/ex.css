@@ -39,6 +39,7 @@ body img {
 }
 
 .modal {
+  display: none;
   left: 0;
   right: 0;
   top: 5%;
