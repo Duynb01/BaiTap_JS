@@ -33,14 +33,12 @@ btnRegister.addEventListener("click", function () {
   btnLogin.classList.remove("click");
   login.classList.add("hidden");
   register.classList.add("show");
-  register.innerHTML = originalRegister;
 });
 btnLogin.addEventListener("click", function () {
   btnLogin.classList.add("click");
   btnRegister.classList.remove("click");
   login.classList.remove("hidden");
   register.classList.remove("show");
-  login.innerHTML = originalLogin;
 });
 i.forEach(function (item) {
   item.addEventListener("click", function () {
