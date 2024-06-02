@@ -65,18 +65,30 @@
         </form>
 
         <form class="register">
-          <span>Họ và tên</span>
-          <input type="text" name="Fullname" placeholder="Họ và tên" />
-          <span>Email</span>
-          <input type="email" name="Email" placeholder="Email" class="email" />
-          <span>Mật khẩu</span>
+          <span class="title">Họ và tên</span>
           <input
-            type="password"
-            name="Password"
-            placeholder="Mật khẩu"
-            class="password"
+            type="text"
+            name="Fullname"
+            placeholder="Họ và tên"
+            class="fullname"
           />
-          <i class="fa-regular fa-eye open"></i>
+          <span class="error1">Vui lòng nhập thông tin</span>
+          <span class="title">Email</span>
+          <input type="email" name="Email" placeholder="Email" class="email" />
+          <span class="error1">Vui lòng nhập thông tin</span>
+          <span class="error2">Vui lòng nhập đúng định dạng email</span>
+          <span class="title">Mật khẩu</span>
+          <div>
+            <input
+              type="password"
+              name="Password"
+              placeholder="Mật khẩu"
+              class="password"
+            />
+            <span class="error1">Vui lòng nhập thông tin</span>
+            <span class="error3">Mật khẩu tối thiểu 6-20 ký tự</span>
+            <i class="fa-regular fa-eye open"></i>
+          </div>
           <button type="submit">Đăng ký</button>
         </form>
       </div>

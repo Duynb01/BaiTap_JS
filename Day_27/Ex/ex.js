@@ -9,10 +9,13 @@ var login = document.querySelector(".login");
 var register = document.querySelector(".register");
 var i = modal.querySelectorAll("i");
 var form = document.querySelectorAll("form");
+var fullname = modal.querySelectorAll("input.fullname");
 var password = modal.querySelectorAll("input.password");
 var email = modal.querySelectorAll("input.email");
+var input = modal.querySelectorAll("input");
 var er1 = modal.querySelectorAll(".error1");
 var er2 = modal.querySelector(".error2");
+var er3 = modal.querySelector(".error3");
 var originalLogin = login.innerHTML;
 var originalRegister = register.innerHTML;
 btn.addEventListener("click", function () {
@@ -31,20 +34,23 @@ document.addEventListener("keyup", function (e) {
   }
 });
 
+// Chuyển giao diện form
 btnRegister.addEventListener("click", function () {
   btnRegister.classList.add("click");
   btnLogin.classList.remove("click");
   login.classList.add("hidden");
   register.classList.add("show");
-  register.innerHTML = originalRegister;
+  // register.innerHTML = register.innerHTML;
 });
 btnLogin.addEventListener("click", function () {
   btnLogin.classList.add("click");
   btnRegister.classList.remove("click");
   login.classList.remove("hidden");
   register.classList.remove("show");
-  login.innerHTML = originalLogin;
+  // login.innerHTML = login.innerHTML;
 });
+
+//Nhìn password
 i.forEach(function (item) {
   item.addEventListener("click", function () {
     if (item.className === "fa-regular fa-eye open") {
@@ -66,80 +72,62 @@ form.forEach(function (item) {
     e.preventDefault();
   });
 });
-email.forEach(function (item) {
-  item.addEventListener("focus", function () {
-    item.addEventListener("blur", function () {
-      if (item.value.length === 0) {
-        er1.forEach(function (er) {
-          er.classList.add("show");
-        });
-      } else {
-        er1.forEach(function (er) {
-          er.classList.remove("show");
-        });
-      }
-    });
-  });
-  item.addEventListener("input", function () {
-    if (item.value.length > 0) {
-      er1.forEach(function (er) {
-        er.classList.remove("show");
-      });
+
+// Hiển thị lỗi của emal
+email[0].addEventListener("focus", function () {
+  email[0].addEventListener("blur", function () {
+    if (email[0].value.length === 0) {
+      er1[0].classList.add("show");
+      input[0].classList.add("show");
+    } else {
+      er1[0].classList.remove("show");
+      input[0].classList.remove("show");
+    }
+    if (password[0].value.length === 0) {
+      er1[1].classList.add("show");
+      input[1].classList.add("show");
+    } else {
+      input[1].classList.remove("show");
     }
   });
 });
-email.forEach(function (item) {
-  item.addEventListener("input", function () {
-    var text = item.value;
-    if (text.length > 0) {
-      if (!text.includes(key1) || !text.includes(key2)) {
-        er2.classList.add("show");
-      } else {
-        er2.classList.remove("show");
-      }
+email[0].addEventListener("input", function () {
+  if (email[0].value.length !== 0) {
+    er1[0].classList.remove("show");
+    if (!email[0].value.includes("@") || !email[0].value.includes(".co")) {
+      er2.classList.add("show");
+      input[0].classList.add("show");
     } else {
       er2.classList.remove("show");
+      input[0].classList.remove("show");
+    }
+  } else {
+    er2.classList.remove("show");
+  }
+});
+
+// Hiển thị lỗi Password
+password[0].addEventListener("focus", function () {
+  password[0].addEventListener("blur", function () {
+    if (password[0].value.length === 0) {
+      er1[1].classList.add("show");
+      input[1].classList.add("show");
+    } else {
+      er1[1].classList.remove("show");
+      input[1].classList.remove("show");
+    }
+    if (email[0].value.length === 0) {
+      er1[0].classList.add("show");
+      input[0].classList.add("show");
+    } else {
+      er1[0].classList.remove("show");
+      input[0].classList.remove("show");
     }
   });
 });
-password.forEach(function (item) {
-  item.addEventListener("focus", function () {
-    item.addEventListener("blur", function () {
-      if (item.value.length === 0) {
-        er1.forEach(function (er) {
-          er.classList.add("show");
-        });
-      } else {
-        er1.forEach(function (er) {
-          er.classList.remove("show");
-        });
-      }
-    });
-  });
-  item.addEventListener("input", function () {
-    if (item.value.length > 0) {
-      er1.forEach(function (er) {
-        er.classList.remove("show");
-      });
-    }
-  });
-  //   });
-  //   item.addEventListener("input", function () {
-  //     if (item.value.length > 0) {
-  //       er1.classList.remove("show");
-  //     }
-  //   });
+password[0].addEventListener("input", function () {
+  if (password[0].value.length !== 0) {
+    er1[1].classList.remove("show");
+    input[1].classList.remove("show");
+  }
 });
-password.forEach(function (item) {
-  item.addEventListener("input", function () {
-    item.addEventListener("blur", function () {
-      if (item.value.length === 0) {
-        console.log(`Nhập mật khẩu`);
-      } else {
-        console.log(item.value);
-      }
-    });
-  });
-});
-var key1 = "@";
-var key2 = ".co";
