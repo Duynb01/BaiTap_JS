@@ -81,13 +81,15 @@ email[0].addEventListener("focus", function () {
       input[0].classList.add("show");
     } else {
       er1[0].classList.remove("show");
-      input[0].classList.remove("show");
+      email[0].addEventListener("input", function () {
+        if (email[0].value.includes("@") && email[0].value.includes(".co")) {
+          input[0].classList.remove("show");
+        }
+      });
     }
     if (password[0].value.length === 0) {
       er1[1].classList.add("show");
       input[1].classList.add("show");
-    } else {
-      input[1].classList.remove("show");
     }
   });
 });
@@ -119,9 +121,6 @@ password[0].addEventListener("focus", function () {
     if (email[0].value.length === 0) {
       er1[0].classList.add("show");
       input[0].classList.add("show");
-    } else {
-      er1[0].classList.remove("show");
-      input[0].classList.remove("show");
     }
   });
 });
