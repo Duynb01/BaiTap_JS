@@ -39,7 +39,6 @@ body img {
 }
 
 .modal {
-  display: none;
   left: 0;
   right: 0;
   top: 5%;
@@ -95,18 +94,50 @@ body img {
   display: block;
   font-size: 16px;
 }
+.modal .modal_dialog .login span.title {
+  margin-block: 20px 5px;
+}
+.modal .modal_dialog .login span.error1 {
+  font-size: 14px;
+  margin-top: 5px;
+  font-style: italic;
+  color: red;
+  display: none;
+}
+.modal .modal_dialog .login span.error1.show {
+  display: block;
+}
+.modal .modal_dialog .login span.error2 {
+  font-size: 14px;
+  margin-top: 5px;
+  font-style: italic;
+  color: red;
+  display: none;
+}
+.modal .modal_dialog .login span.error2.show {
+  display: block;
+}
 .modal .modal_dialog .login input {
   width: 100%;
   border: 1px solid #ccc;
   padding: 10px;
   font-size: 17px;
   border-radius: 4px;
-  margin-block: 5px 20px;
 }
-.modal .modal_dialog .login i {
+.modal .modal_dialog .login > div {
+  position: relative;
+}
+.modal .modal_dialog .login > div input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 4px;
+}
+.modal .modal_dialog .login > div i {
   position: absolute;
-  top: 290px;
-  right: 30px;
+  top: 13px;
+  right: 15px;
   color: #a8a2a2;
 }
 .modal .modal_dialog .login button {
@@ -115,6 +146,7 @@ body img {
   border-radius: 4px;
   font-weight: 700;
   color: #fff;
+  margin-top: 40px;
   background-color: rgb(26, 121, 0);
 }
 .modal .modal_dialog .register {

@@ -41,7 +41,7 @@ body {
   }
 }
 .modal {
-  display: none;
+  //   display: none;
   left: 0;
   right: 0;
   top: 5%;
@@ -95,12 +95,29 @@ body {
         display: block;
         font-size: 16px;
         // margin-block: 20px 5px;
-        // &.error {
-        //   font-size: 15px;
-        //   //   margin-bottom: 20px;
-        //   margin: 0;
-        //   //   display: none;
-        // }
+        &.title {
+          margin-block: 20px 5px;
+        }
+        &.error1 {
+          font-size: 14px;
+          margin-top: 5px;
+          font-style: italic;
+          color: red;
+          display: none;
+          &.show {
+            display: block;
+          }
+        }
+        &.error2 {
+          font-size: 14px;
+          margin-top: 5px;
+          font-style: italic;
+          color: red;
+          display: none;
+          &.show {
+            display: block;
+          }
+        }
       }
       input {
         width: 100%;
@@ -108,22 +125,36 @@ body {
         padding: 10px;
         font-size: 17px;
         border-radius: 4px;
-        &::placeholder {
+        // margin-block: 5px 20px;
+        &.password {
         }
-        margin-block: 5px 20px;
       }
-      i {
-        position: absolute;
-        top: 290px;
-        right: 30px;
-        color: #a8a2a2;
+      > div {
+        position: relative;
+        input {
+          width: 100%;
+          border: 1px solid #ccc;
+          padding: 10px;
+          font-size: 17px;
+          border-radius: 4px;
+          &.password {
+          }
+        }
+        i {
+          position: absolute;
+          top: 13px;
+          right: 15px;
+          color: #a8a2a2;
+        }
       }
+
       button {
         width: 100%;
         padding: 15px 10px;
         border-radius: 4px;
         font-weight: 700;
         color: #fff;
+        margin-top: 40px;
         background-color: rgba(26, 121, 0, 1);
       }
     }
