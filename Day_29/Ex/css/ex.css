@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
+  position: relative;
+}
+.carousel .carousel-inner {
+  display: flex;
+}
+.carousel .carousel-inner .item {
+  width: 100%;
+}
+.carousel .carousel-nav {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  padding: 0 30px;
+  top: 50%;
+}
+.carousel .carousel-nav i {
+  font-size: 30px;
+  color: #fff;
+}
+.carousel .carousel-dots {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  margin-top: 15px;
+  column-gap: 5px;
+}
+.carousel .carousel-dots .dot {
+  border: 1px solid #000;
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+}
+.carousel .carousel-dots .dot.show {
+  background-color: #daa520;
+  border: 0;
+}
+
+/*# sourceMappingURL=ex.css.map */
