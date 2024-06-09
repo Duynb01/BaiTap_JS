@@ -1,7 +1,7 @@
 var prev = document.querySelector(".fa-solid.fa-circle-arrow-left.prev");
 var after = document.querySelector(".fa-solid.fa-circle-arrow-right.after");
 var carousel_dots = document.querySelector(".carousel-dots");
-var carousel_inner = document.querySelector(".carousel-inner div");
+var carousel_inner = document.querySelector(".carousel-inner");
 
 var item = document.querySelectorAll(".item");
 item.forEach(function (child) {
@@ -12,21 +12,21 @@ item.forEach(function (child) {
       carousel_dots.innerHTML += '<span class = "dot"></span>';
     }
   }
-  console.log(child.offsetWidth);
+  //   console.log(child.offsetWidth);
 });
-var count = 1;
+var count = 0;
 after.addEventListener("click", function () {
   var dotShow = document.querySelector(".dot.show");
   dotShow.nextElementSibling.classList.add("show");
   if (dotShow) {
     dotShow.classList.remove("show");
   }
-  if (count > dots.length) {
+  if (count >= dots.length) {
     count = dots.length;
   } else {
-    carousel_inner.style.transform = `translateX(${count * 100}vw)`;
     count++;
   }
+  carousel_inner.style.transform = `translateX(${count * 100}%)`;
 });
 prev.addEventListener("click", function (e) {
   this.off;
@@ -35,12 +35,12 @@ prev.addEventListener("click", function (e) {
   if (dotShow) {
     dotShow.classList.remove("show");
   }
-  if (count < 0) {
+  if (count <= 0) {
     count = 0;
   } else {
-    carousel_inner.style.transform = `translateX(-${count * 100}vw)`;
     count--;
   }
+  carousel_inner.style.transform = `translateX(-${count * 100}%)`;
 });
 
 var dots = document.querySelectorAll(".dot");
