@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Voice</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        outline: 0;
+        border: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+      }
+      h1 {
+        margin-block: 30px;
+      }
+      .btn {
+        background-color: red;
+        padding: 10px 15px;
+        font-size: 20px;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: green;
+      }
+      .offer {
+        margin-block: 50px;
+        font-size: 20px;
+        color: red;
+      }
+      .offer.green {
+        color: green;
+      }
+      div {
+        width: 80%;
+        height: 40px;
+        margin: 0 auto;
+        border-radius: 4px;
+        border: 1px solid green;
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      div.show {
+        display: flex;
+      }
+      .show {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bạn muốn làm gì? Hãy nói cho tôi biết</h1>
+    <button class="btn">Bấm vào đây để nói</button>
+    <p class="offer"></p>
+    <div>
+      <p class="show"></p>
+    </div>
+    <script src="ex.js"></script>
+  </body>
+</html>
