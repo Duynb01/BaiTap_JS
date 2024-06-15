@@ -93,7 +93,6 @@ window.addEventListener("load", function () {
   });
 });
 
-var timeNew = 0;
 // Case hover vào hiện thị trước time
 var changeTime = document.querySelector(".change-time");
 progressBar.addEventListener("mouseenter", function (e) {
@@ -102,7 +101,7 @@ progressBar.addEventListener("mouseenter", function (e) {
     changeTime.classList.add("show");
     changeTime.style.left = `${e.offsetX - 20}px`;
     rate = (e.offsetX / progressBar.clientWidth) * 100;
-    timeNew = (rate / 100) * duration;
+    var timeNew = (rate / 100) * duration;
     changeTime.innerText = getTime(timeNew);
   });
   progressSpan.addEventListener("mousemove", function (e) {
