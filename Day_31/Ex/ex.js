@@ -99,7 +99,7 @@ progressBar.addEventListener("mouseenter", function (e) {
   var rate = 0;
   progressBar.addEventListener("mousemove", function (e) {
     changeTime.classList.add("show");
-    changeTime.style.left = `${e.offsetX - 20}px`;
+    changeTime.style.left = `${e.offsetX - 22}px`;
     rate = (e.offsetX / progressBar.clientWidth) * 100;
     var timeNew = (rate / 100) * duration;
     changeTime.innerText = getTime(timeNew);
