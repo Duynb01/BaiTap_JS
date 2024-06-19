@@ -29,10 +29,20 @@ progressSpan.addEventListener("mousedown", function (e) {
   e.stopPropagation();
   document.addEventListener("mousemove", handleDrag);
   initialClientX = e.clientX; //Gán ví trí của button màu tím so với body
+  document.addEventListener("mouseup", function () {
+    audio.currentTime = (rateTime / 100) * duration;
+    audio.addEventListener("timeupdate", function () {
+      currentTimeEl.innerText = getTime(audio.currentTime);
+    });
+  });
 });
 document.addEventListener("mouseup", function () {
+  //   audio.currentTime = (rateTime / 100) * duration;
   document.removeEventListener("mousemove", handleDrag);
   lastOffsetProgressBar = offsetProgressBar;
+  //   audio.addEventListener("timeupdate", function () {
+  //     currentTimeEl.innerText = getTime(audio.currentTime);
+  //   });
 });
 var handleDrag = function (e) {
   var clientX = e.clientX;
@@ -95,13 +105,13 @@ window.addEventListener("load", function () {
 
 // Case hover vào hiện thị trước time
 var changeTime = document.querySelector(".change-time");
+var rateTime = 0;
 progressBar.addEventListener("mouseenter", function (e) {
-  var rate = 0;
   progressBar.addEventListener("mousemove", function (e) {
     changeTime.classList.add("show");
     changeTime.style.left = `${e.offsetX - 22}px`;
-    rate = (e.offsetX / progressBar.clientWidth) * 100;
-    var timeNew = (rate / 100) * duration;
+    rateTime = (e.offsetX / progressBar.clientWidth) * 100;
+    var timeNew = (rateTime / 100) * duration;
     changeTime.innerText = getTime(timeNew);
   });
   progressSpan.addEventListener("mousemove", function (e) {
@@ -110,7 +120,7 @@ progressBar.addEventListener("mouseenter", function (e) {
   //   Case tua
   progressBar.addEventListener("mousedown", function (e) {
     e.stopPropagation();
-    audio.currentTime = (rate / 100) * duration;
+    audio.currentTime = (rateTime / 100) * duration;
     audio.addEventListener("timeupdate", function () {
       currentTimeEl.innerText = getTime(audio.currentTime);
     });
@@ -121,15 +131,18 @@ progressBar.addEventListener("mouseleave", function (e) {
 });
 
 // progressSpan.addEventListener("mousedown", function (e) {
-//   e.stopPropagation();
+//   //   e.stopPropagation();
 //   document.addEventListener("mousemove", function () {
-//     document.addEventListener("mouseup", function () {
-//       audio.currentTime = timeNew;
-//       audio.addEventListener("timeupdate", function () {
-//         currentTimeEl.innerText = getTime(audio.currentTime);
-//         var ts = audio.currentTime;
-//         currentTimeEl.innerText = getTime(ts);
-//       });
-//     });
+
 //   });
 // });
+
+// document.addEventListener("mouseup", function () {
+//     audio.currentTime = (rateTime / 100) * duration;
+//     document.removeEventListener("mousemove", handleDrag);
+//     lastOffsetProgressBar = offsetProgressBar;
+
+//     audio.addEventListener("timeupdate", function () {
+//       currentTimeEl.innerText = getTime(audio.currentTime);
+//     });
+//   });

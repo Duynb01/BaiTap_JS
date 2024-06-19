@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <style>
+      h2 {
+        text-transform: uppercase;
+      }
+      td > div {
+        display: flex;
+        flex-direction: column;
+      }
+      td > div input {
+        width: 90%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Danh sách sản phẩm</h2>
+    <table border="1" width="100%" cellspacing="0" cellpadding="4">
+      <tr>
+        <th width="5%">STT</th>
+        <th width="75%">Tên sản phẩm</th>
+        <th width="10%">Giá</th>
+        <th width="10%">Thêm vào giỏ</th>
+      </tr>
+      <!-- SP 1 -->
+      <tr>
+        <td>1</td>
+        <td class="name1">Sản phẩm 1</td>
+        <td class="price1">1000</td>
+        <td>
+          <div>
+            <input type="number" value="1" class="input1" />
+            <button class="btn">Thêm vào giỏ hàng</button>
+          </div>
+        </td>
+      </tr>
+      <!-- SP 2 -->
+      <tr>
+        <td>2</td>
+        <td class="name2">Sản phẩm 2</td>
+        <td class="price2">2000</td>
+        <td>
+          <div>
+            <input type="number" value="1" /> <button>Thêm vào giỏ hàng</button>
+          </div>
+        </td>
+      </tr>
+      <!-- SP 3 -->
+      <tr>
+        <td>3</td>
+        <td class="name3">Sản phẩm 3</td>
+        <td class="price3">3000</td>
+        <td>
+          <div>
+            <input type="number" value="1" /> <button>Thêm vào giỏ hàng</button>
+          </div>
+        </td>
+      </tr>
+      <!-- SP 4 -->
+      <tr>
+        <td>4</td>
+        <td class="name4">Sản phẩm 4</td>
+        <td class="price4">4000</td>
+        <td>
+          <div>
+            <input type="number" value="1" /> <button>Thêm vào giỏ hàng</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <h2>Giỏ hàng</h2>
+    <div class="cart"></div>
+    <!-- <table border="1" width="100%" cellspacing="0" cellpadding="4">
+      <tr>
+        <th width="5%">STT</th>
+        <th width="45%">Tên sản phẩm</th>
+        <th width="15%">Giá</th>
+        <th width="15%">Số lượng</th>
+        <th width="15%">Thành tiền</th>
+        <th width="5%">Xóa</th>
+      </tr>
+    </table> -->
+    <script src="ex.js"></script>
+  </body>
+</html>
