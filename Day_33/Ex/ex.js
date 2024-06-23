@@ -1,4 +1,4 @@
-var lyric = {
+var lyrics = {
   err: 0,
   msg: "Success",
   data: {
@@ -622,14 +622,6 @@ window.addEventListener("load", function () {
     progress.style.width = `${rate}%`;
     var timeMsSecond = currentTime * 1000;
     console.log(timeMsSecond);
-    if (timeMsSecond < 14010) {
-      karaokeInner.innerHTML = `<div>
-                                  <p>Hạnh phúc mới</p>
-                                  <p>Ca sĩ: Hari Won, Phạm Quỳnh Anh</p>
-                                </div>`;
-    } else {
-      karaokeInner.innerHTML = "";
-    }
   });
 });
 
@@ -671,4 +663,48 @@ btnKaraoke.addEventListener("click", function () {
 });
 down.addEventListener("click", function () {
   karaoke.classList.remove("show");
+});
+var lyric = lyrics["data"]["sentences"];
+
+// Lấy dữ liệu
+function getData(array) {
+  var js = array
+    .map(function (item) {
+      return item["data"];
+    })
+    .join(" ");
+  return js;
+}
+console.log(getData(lyric[10]["words"]));
+
+// Lấy thời gian bắt đầu
+function getTimeCur(array) {
+  var js = array.map(function (item) {
+    return item["startTime"];
+  })[0];
+  return js;
+}
+
+// Thay đổi lời thoại
+audio.addEventListener("timeupdate", function () {
+  var currentTime = audio.currentTime;
+  var timeCur = currentTime * 1000;
+  for (var i = 0; i < lyric.length; i += 2) {
+    if (timeCur < getTimeCur(lyric[0]["words"])) {
+      karaokeInner.innerHTML = `<div>
+                                  <p>Hạnh phúc mới</p>
+                                  <p>Ca sĩ: Hari Won, Phạm Quỳnh Anh</p>
+                                </div>`;
+      break;
+    } else if (
+      timeCur >= getTimeCur(lyric[i]["words"]) &&
+      timeCur <= getTimeCur(lyric[i + 2]["words"])
+    ) {
+      karaokeInner.innerHTML = `<div>
+                                  <p>${getData(lyric[i]["words"])}</p>
+                                  <p>${getData(lyric[i + 1]["words"])}</p>
+                                </div>`;
+      break;
+    }
+  }
 });
