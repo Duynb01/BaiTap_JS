@@ -91,5 +91,3 @@ divContent.addEventListener("input", function () {
   quantityChar.childNodes[1].nodeValue = char;
   quantityWord.childNodes[1].nodeValue = word;
 });
-
-console.log(nodeChar);
