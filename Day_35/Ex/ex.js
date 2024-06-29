@@ -47,12 +47,14 @@ savePDF.addEventListener("click", function () {
   html2pdf().from(divContent).set(options).save();
 });
 
-// New
+// Tạo mới (New)
 var creatNew = document.querySelector(".create-new");
 creatNew.addEventListener("click", function () {
   divContent.textContent = "";
   divContent.focus();
   btnColor.value = `#000000`;
+  quantityChar.childNodes[1].nodeValue = nodeChar;
+  quantityWord.childNodes[1].nodeValue = nodeWord;
 });
 
 // Text Format
@@ -89,3 +91,5 @@ divContent.addEventListener("input", function () {
   quantityChar.childNodes[1].nodeValue = char;
   quantityWord.childNodes[1].nodeValue = word;
 });
+
+console.log(nodeChar);
