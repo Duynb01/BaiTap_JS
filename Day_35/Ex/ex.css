@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/surface/Assets/css/fonts/all/normal/segoeui.eot");
+  src: url("/surface/Assets/css/fonts/all/normal/segoeui.eot?#iefix")
+      format("embedded-opentype"),
+    url("/surface/Assets/css/fonts/all/normal/segoeui.woff") format("woff"),
+    url("/surface/Assets/css/fonts/all/normal/segoeui.svg#SegoeUI")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.root .container h2 {
+  font-weight: 600;
+  font-size: 22px;
+  padding: 15px 0;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+/* CSS h2 */
+
+/* Start CSS control */
+.root .container .control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.root .container .control .file {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+.root .container .control .file > div {
+  position: relative;
+}
+.root .container .control .file > div > button.btn-file {
+  background-color: #0d6efd;
+  color: #fff;
+  width: 60px;
+  min-height: 36px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 300ms ease;
+}
+
+.root .container .control .file > div > button.btn-file:hover {
+  background-color: #0a53be;
+}
+
+.root .container .control .file > div > button.btn-file:focus {
+  background-color: #0a53be;
+}
+
+.root .container .control .file > div > button.btn-file i {
+  position: relative;
+  top: -3px;
+}
+
+.root .container .control .file > div .save-file {
+  display: none;
+  top: 40px;
+  border: 1px solid #0000004f;
+  padding: 8px 0;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 9999;
+  background-color: #fff;
+}
+
+.root .container .control .file > div .save-file.open {
+  display: block;
+}
+
+.root .container .control .file > div .save-file > button {
+  display: block;
+  background-color: transparent;
+  padding: 4px 16px;
+  width: 158px;
+  text-align: left;
+}
+
+.root .container .control .file > div .save-file > button:hover {
+  background-color: #f8f9fa;
+}
+
+.root .container .control .file > div .save-file > button:active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.root .container .control .file input.filename {
+  min-height: 34px;
+  outline: 1px solid #000;
+  padding: 6px 5px;
+  border-radius: 3px;
+}
+
+.root .container .control .file input.filename:focus {
+  outline: 2px solid #000;
+}
+
+/* CSS control text-format */
+.root .container .control .text-format {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.root .container .control .text-format button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  min-width: 48px;
+  max-height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 300ms ease;
+}
+
+.root .container .control .text-format button:hover {
+  background-color: #424649;
+}
+
+.root .container .control .text-format button.btn-bold {
+  font-weight: 900;
+}
+
+.root .container .control .text-format button.btn-underline {
+  text-decoration: underline;
+}
+
+.root .container .control .text-format button.btn-italic {
+  font-weight: 600;
+  font-style: italic;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.root .container .control .text-format input.btn-color {
+  border: 1px solid #000;
+  max-width: 48px;
+  min-height: 36px;
+  border-radius: 3px;
+}
+
+/* CSS message */
+.root .container .message {
+  min-height: 300px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* CSS show */
+.root .container .show {
+  display: flex;
+  column-gap: 30px;
+  float: right;
+}

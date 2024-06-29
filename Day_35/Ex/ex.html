@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="ex.css" />
+    <link rel="stylesheet" href="grid.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+  <body>
+    <div class="root">
+      <div class="container">
+        <h2>Doc Editor</h1>
+        <div class="control">
+          <div class="file">
+            <div>
+              <button class="btn-file">
+                <span>File</span>
+                <i class="fa-solid fa-sort-down"></i>
+              </button>
+              <div class="save-file">
+                <button class="create-new">New</button>
+                <button class="save-text">Save as TXT</button>
+                <button class="save-pdf">Save as PDF</button>
+              </div>
+            </div>
+            <input type="text" name="filename" value="untitled" class="filename">
+          </div>
+          <div class="text-format">
+            <button class="btn-bold">b</button>
+            <button class="btn-underline">u</button>
+            <button class="btn-italic">i</button>
+            <input type="color" class="btn-color">
+          </div>
+        </div>
+        <div class="message" contenteditable="true" spellcheck="false" value=""></div>
+        <div class="show">
+          <span class="char">Số ký tự: </span>
+          <span class="word">Số từ: </span>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="ex.js"></script>
+  </body>
+</html>
+
