@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #03bdf0;
+}
+
+.root .timer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  justify-content: center;
+}
+
+.root .timer h2 {
+  color: #fff;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.root .timer .counter {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  background-color: #ff9100;
+  color: #fff;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+}
+
+.root .timer .action .btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 9999px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.root .timer .action .btn.hidden {
+  background-color: #b6b6b6;
+  color: gray;
+  cursor: not-allowed;
+}
