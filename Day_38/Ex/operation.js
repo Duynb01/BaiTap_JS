@@ -40,3 +40,7 @@ btnEdits.forEach((btnEdit) => {
       this.parentElement.previousSibling.parentNode.innerText.trim();
   });
 });
+console.log(btnComplete.children);
+// let quantity = finish.children.length;
+import { quantity } from "./feature.js";
+console.log(quantity.length);
