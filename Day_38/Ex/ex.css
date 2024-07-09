@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Nunito;
+}
+.btn {
+  background-color: rgb(156 163 175);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:active {
+  outline: 3px solid #6ee7b7;
+}
+
+.btn:hover {
+  background-color: rgb(105, 110, 118);
+}
+.icon {
+  background-color: rgb(29 78 216);
+}
+.icon:hover {
+  background-color: rgb(17, 63, 187);
+}
+.delete {
+  background-color: rgb(190 18 60);
+}
+.delete:hover {
+  background-color: rgb(133, 12, 43);
+}
+.check {
+  background-color: rgb(156 163 175);
+}
+.check:hover {
+  background-color: #046147;
+}
+.access {
+  background-color: #047857;
+}
+.access:hover {
+  background-color: #046147;
+}
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.root .container {
+  width: 700px;
+  height: 300px;
+}
+.root .container h2 {
+  font-size: 36px;
+  text-align: center;
+  padding: 12px 0;
+}
+.root .container h2 span {
+  background: linear-gradient(
+    90deg,
+    rgba(88, 164, 238, 1) 0%,
+    rgba(50, 157, 176, 1) 45%,
+    rgba(38, 156, 157, 1) 55%,
+    rgba(11, 151, 115, 1) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+.root .container .search-add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 0;
+}
+.root .container .search-add .search {
+  position: relative;
+}
+.root .container .search-add .search .search-form {
+  width: 570px;
+  padding: 16px;
+  border: 1px solid #00000042;
+  border-radius: 8px;
+  position: relative;
+}
+.root .container .search-add .search .search-form::placeholder {
+  font-size: 16px;
+  align-items: center;
+  position: absolute;
+}
+.root .container .search-add .search button {
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  margin: 7px;
+  font-size: 14px;
+}
+.root .container .search-add .btn-add {
+  width: 120px;
+  height: 40px;
+}
+.root .container .show {
+  padding: 12px 0;
+}
+.root .container .show .btn-show button {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  margin-block: 10px;
+}
+
+.root .container .show .btn-show button i {
+  transform: rotate(0);
+  transition: transform 0.2s;
+}
+
+.root .container .show .btn-show button i.down {
+  transform: rotate(90deg);
+}
+
+.root .container .show .unfinished {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.root .container .show .name-work {
+  display: flex;
+  /* border: 1px solid #ccc; */
+  box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.187);
+  border-radius: 8px;
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.root .container .show .name-work .item-option button {
+  width: 40px;
+  height: 40px;
+  padding: 9px 10px;
+}
+
+.root .container .show .finish {
+  display: none;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.root .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  bottom: 0;
+  background-color: #56545442;
+  z-index: 999;
+  width: 100vw;
+  display: none;
+}
+
+.root .add-edit {
+  width: 450px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  position: fixed;
+  z-index: 9999;
+  background-color: #fff;
+  display: none;
+}
+
+.root .add-edit .form-edit {
+  padding: 24px;
+  border-bottom: 1px solid #ccc;
+}
+.root .add-edit .form-edit .form-input {
+  border: 1px solid #ccc;
+  padding: 16px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.root .add-edit .form-edit .form-input:focus {
+  outline: 2px solid #000;
+}
+
+.root .add-edit .form-edit .form-input::placeholder {
+  font-size: 16px;
+}
+
+.root .add-edit .option {
+  padding: 16px;
+  display: flex;
+  column-gap: 32px;
+  justify-content: center;
+}
+
+.root .add-edit .option .cancel {
+  background-color: #fff;
+  color: #565454;
+  border: 1px solid #ccc;
+}
+
+.root .add-edit .option .cancel:hover {
+  background-color: rgba(156, 163, 175, 0.089);
+}
