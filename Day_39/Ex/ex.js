@@ -1,6 +1,6 @@
 var listBlog = document.querySelector(".list-blog");
 
-const urlApi = "http://localhost:3000";
+const urlApi = "https://trj49q-8080.csb.app";
 
 const getLimit = () => {
   var limit = 5;
