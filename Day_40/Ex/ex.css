@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#root .app {
+  background-color: #000000;
+  padding-inline: 10%;
+}
+
+#root .app .quizizzGame {
+  height: 100vh;
+  background: no-repeat fixed
+    url("https://watermark.lovepik.com/photo/20211118/large/lovepik-street-in-the-middle-of-the-forest-picture_450085294.jpg")
+    0 0 / cover;
+}
+
+#root .app .quizizzGame .start {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#root .app .quizizzGame .start .start-game {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1915159c;
+}
+#root .app .quizizzGame .start .start-game .btn-start {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 18px 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+#root .app .quizizzGame .start .countdown-time {
+  color: #fff;
+  background-color: #000000;
+  padding-block: 30px;
+  width: 100%;
+  display: none;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  transition: font-size 400ms linear;
+}
+
+#root .app .quizizzGame .start .countdown-time.scale {
+  font-size: 70px;
+}
