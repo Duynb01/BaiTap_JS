@@ -1,0 +1,17 @@
+main .container section.clients {
+  padding-block: 112px;
+  text-align: center;
+}
+main .container section.clients h2 {
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+main .container section.clients .name-client {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+main .container section.clients .name-client img {
+  width: 160px;
+}

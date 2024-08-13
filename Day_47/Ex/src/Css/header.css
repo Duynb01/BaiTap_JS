@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+header {
+  position: fixed;
+  padding-block: 16px;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+header .container .logo {
+  font-weight: 700;
+  font-size: 16px;
+}
+header .container .logo a {
+  text-decoration: none;
+  color: black;
+}
+header .container .tag {
+  width: 25%;
+}
+header .container .tag ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+header .container .tag ul li a {
+  text-decoration: none;
+  color: black;
+}
+header .container .connect {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+header .container .connect > button {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .container .connect > button.sign-in {
+  transition: background-color 0.2s ease;
+}
+header .container .connect .blocks {
+  background-color: #000;
+  color: #fff;
+}
+header .container .connect > button.sign-in:hover {
+  background-color: #cccccc57;
+}
+header .container .connect > button.blocks:hover {
+  box-shadow: 0px 6px 10px 0 #cccccc;
+}

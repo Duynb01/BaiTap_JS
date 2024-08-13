@@ -1,6 +1,6 @@
 var listBlog = document.querySelector(".list-blog");
 
-const urlApi = "https://trj49q-8080.csb.app";
+const urlApi = "http://localhost:3000";
 
 const getLimit = () => {
   var limit = 5;
@@ -24,6 +24,8 @@ const getLimit = () => {
 const getApi = async (newLimit) => {
   const response = await fetch(`${urlApi}/blogs?_page=1&_limit=${newLimit}`);
   const blog = await response.json();
+  console.log(blog);
+
   blog.forEach((element) => {
     renderBlog(element);
   });
